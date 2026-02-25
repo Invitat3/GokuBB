@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Goku Baby</title>
+    <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cookie&family=Emblema+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--Video fondo-->
+    <video autoplay muted loop class="video-fondo">
+    <source src="musica/ssstik.io_@anderson_rodrigues23_1771976597379.mp4" type="video/mp4">
+  </video>
+
+
+    <!-- Música de fondo -->
+    <!-- Botón de música -->
+    <div id="music-button">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <audio id="music" src="musica/Mi Corazón Encantado -INSTRUMENTAL- HD.mp4" loop></audio>
+
+    <div class="container">
+
+        </section>
+        <div class="confetti"></div>
+        <div class="bubbles"></div>
+        <div class="characters">
+
+            <img src="imagen/Dragon Ball Sticker.gif" alt="Stitch " class="stitch ">
+        </div>
+
+        <div class="overlay ">
+            <div class="imagenes-flotantes ">
+
+                <img src="imagen/biberon.png" class="flotante ">
+            </div>
+            <h1 class="title ">Asiel</h1>
+            <h2 class="subtitle ">¡Cumple!</h2>
+
+            <!-- Imagen debajo del título -->
+            <img src="imagen/Diseño_sin_título__27_-removebg-preview.png " alt=" Fiesta " class="party-image ">
+
+            <h2 class="subtitle ">8 de Octubre de 2029</h2>
+            <p>Faltan:</p>
+            <div class="countdown-container">
+                <p class="countdown-title"></p>
+                <div class="count-single">
+                    <div class="count-item">
+                        <span id="days">00</span>
+                        <small>Días</small>
+                    </div>
+                    <div class="count-item">
+                        <span id="hours">00</span>
+                        <small>Horas</small>
+                    </div>
+                    <div class="count-item">
+                        <span id="minutes">00</span>
+                        <small>Minutos</small>
+                    </div>
+                    <div class="count-item">
+                        <span id="seconds">00</span>
+                        <small>Segundos</small>
+                    </div>
+                </div>
+            </div>
+            <div class="info-icons ">
+                <div class="icon-box ">
+                    <img src="imagen/dragon.png" alt="Comida " class="icon ">
+                    <p>La fiesta comienza a las 3:00 PM</p>
+                </div>
+                <button class="kpop-play-btn" onclick="openKpopVideo()">
+  ▶
+</button>
+                <div class="icon-box ">
+                    <!--  <img src="imagen/surfe.webp " alt="Traje de baño " class="icon ">-->
+                    <h2>¡Te esperamos!</h2>
+                </div>
+            </div>
+            <div>
+                <p>Lugar: Local Camilo</p>
+            </div>
+            <div><a href="https://goo.gl/maps/TuUbicacion " target="_blank " class="btn-location ">
+  📍 Ver ubicación
+</a>
+            </div>
+            <div>
+                <a href="https://wa.me/521XXXXXXXXXX " target="_blank " class="btn ">Confirmar asistencia</a>
+            </div>
+
+        </div>
+    </div>
+    <div id="kpopModal" class="kpop-modal">
+        <div class="kpop-modal-content">
+            <span class="kpop-close" onclick="closeKpopVideo()">✖</span>
+
+            <video id="kpopVideo" width="100%" controls preload="auto">
+      <source src="musica/ssstik.io_@nemo_23082020_1771975156758.mp4" type="video/mp4">
+    </video>
+
+        </div>
+    </div>
+    <script src="script.js "></script>
+    <script>
+        let musicWasPlaying = false;
+
+        function openKpopVideo() {
+            const modal = document.getElementById("kpopModal");
+            const video = document.getElementById("kpopVideo");
+            const music = document.getElementById("bgMusic");
+
+            modal.style.display = "flex";
+
+            if (music && !music.paused) {
+                musicWasPlaying = true;
+                music.pause();
+            }
+
+            video.play();
+        }
+
+        function closeKpopVideo() {
+            const modal = document.getElementById("kpopModal");
+            const video = document.getElementById("kpopVideo");
+            const music = document.getElementById("bgMusic");
+
+            modal.style.display = "none";
+
+            video.pause();
+            video.currentTime = 0;
+
+            if (music && musicWasPlaying) {
+                music.play();
+            }
+        }
+    </script>
+</body>
+
+</html>
